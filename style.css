@@ -1,6 +1,8 @@
 @font-face {
     font-family: 'Chillax-Regular';
-    src: url(/Chillax-Regular.ttf);
+    src: url('./Chillax-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
 }
 
 
@@ -218,7 +220,7 @@ body:not(.light-mode) .theme-toggle {
 
 .todos-area #list-container li::before{
     content: '';
-    background-image: url(/unchecked.png);
+    background-image: url(unchecked.png);
     background-size: cover;
     background-position: center;
     position: absolute;
@@ -237,7 +239,7 @@ body:not(.light-mode) .theme-toggle {
 }
 
 .todos-area #list-container li.checked::before{
-    background-image: url(/checked1.png);
+    background-image: url(checked1.png);
     height: 15px;
     width: 15px;
     border-radius: 8px;
