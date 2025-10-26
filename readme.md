@@ -5,10 +5,20 @@ It includes smooth task management, persistent theme toggle (Light/Dark mode), a
 
 ---
 
+## 📸 Screenshots
+
+### ☀️ Light Mode
+![Light Mode Screenshot](light-mode.png)
+
+### 🕶️ Dark Mode
+![Dark Mode Screenshot](dark-mode.png)
+
+
+
 ## ⚡ Features
-- ➕ Add and delete tasks instantly  
-- 🌙 Light / Dark mode toggle with local storage memory  
-- 💾 Automatically saves your list in the browser  
+- ➕ Add and delete tasks instantly
+- 🌙 Light / Dark mode toggle with local storage memory
+- 💾 Automatically saves your list in the browser
 - 🧠 Minimal and responsive design
 
 ---
@@ -23,4 +33,4 @@ It includes smooth task management, persistent theme toggle (Light/Dark mode), a
 ## 🚀 Setup
 1. Clone this repository:
    ```bash
-   git clone https://github.com/<your-username>/todo-app.git
+   git clone https://mohitchauhan-stack.github.io/Todo-App/
