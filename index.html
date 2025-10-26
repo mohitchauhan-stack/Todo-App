@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+    <div class="container flex">
+        <div class="todo-app">
+            <div class="header-logo flex">
+                <h1>Todo App </h1>
+                <img src="/final-icon.jpg" alt="logo">
+                <button id="theme-toggle" class="theme-toggle">Dark mode</button>
+            </div>
+            <div class="row-input flex">
+                <input type="text" name="input-box" id="input-box" placeholder="add task">
+                <button onclick="addTask()">Add</button>
+            </div>
+            <div class="todos-area">
+                <p class="empty-text hidden">No list items yet</p>
+                <ul id="list-container" class="flex">
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
