@@ -1,18 +1,17 @@
 # 📝 Todo App
 
-A simple and elegant **Todo List Web App** built with pure **HTML, CSS, and JavaScript**.  
+A simple and elegant **Todo List Web App** built with pure **HTML, CSS, and JavaScript**.
 It includes smooth task management, persistent theme toggle (Light/Dark mode), and a clean UI.
 
 ---
 
 ## 📸 Screenshots
 
-### ☀️ Light Mode
-![Light Mode Screenshot](light-mode.png)
-
 ### 🕶️ Dark Mode
-![Dark Mode Screenshot](dark-mode.png)
+![Dark Mode Screenshot](./assets/dark-mode.png)
 
+### 🕶️ Mobile View
+![Mobile View Screenshot](./assets/mobile-view.png)
 
 
 ## ⚡ Features
@@ -29,8 +28,3 @@ It includes smooth task management, persistent theme toggle (Light/Dark mode), a
 - **JavaScript (Vanilla)**
 
 ---
-
-## 🚀 Setup
-1. Clone this repository:
-   ```bash
-   git clone https://mohitchauhan-stack.github.io/Todo-App/

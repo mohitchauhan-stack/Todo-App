@@ -1,0 +1,95 @@
+/* --- 730px --- */
+@media (max-width: 45.5rem) {
+  /* 730px / 16px =  45.625rem*/
+  /* 45.5rem * 16px = 728px */
+
+  html{
+    font-size: 56.25%;
+    /* 56.25% of 16px = 9px */
+  }
+
+  :root{
+    --space-2xl: 3.5rem;
+    --space-3xl: 4rem;
+  }
+
+  .todo-section{
+    height: 60vh;
+  }
+}
+
+
+
+/* --- 600px --- */
+@media (max-width: 37.5rem) {
+  /* 600px / 16px =  37.5rem*/
+  /* 37.5rem * 16px = 600px */
+
+  html{
+    font-size: 50%;
+    /* 50% of 16px = 8px */
+  }
+
+  :root{
+    --space-2xl: 3rem;
+    --space-3xl: 3.5rem;
+  }
+
+  .todo-section{
+    height: 100vh;
+  }
+}
+
+
+/* ------ 536px ------- */
+@media (max-width: 33.5rem) {
+    /* 536px / 16px = 33.5rem */
+    /* 33.5rem * 16px = 536px */
+
+  html{
+    font-size: 43.75%;
+    /* 43.75% of 16px = 7px */
+  }
+
+  :root{
+    --space-2xl: 2.5rem;
+    --space-3xl: 3rem;
+  }
+
+  .todo-section{
+    height: 100vh;
+  }
+
+  .input-section{
+    width: 100%;
+  }
+}
+
+/* ----- 400px ----- */
+@media (max-width: 25rem) {
+    /* 400px / 16px = 25rem  */
+    /* 25rem * 16px = 400px  */
+
+    .container{
+        margin: 0vh 2vh;
+    }
+    
+    .checked{
+        width: 18px;
+    }
+}
+
+/* ---- 328px ---- */
+@media (max-width: 20.5rem) {
+    /* 328px / 16px = 20.5rem */
+    /* 20.5rem * 16px = 328px  */
+
+    .list-container{
+        padding: 0vh;
+        margin-top: var(--space-xs);
+    }
+    .list{
+        width: 96%;
+        border-radius: 26px;
+    }
+}
