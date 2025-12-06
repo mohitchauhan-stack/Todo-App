@@ -13,27 +13,31 @@
 
     <div class="container flex">
         <div class="todo-app flex">
+                <div class="modes">
+                    <i class="fa-regular fa-sun"></i>
+                    <i class="fa-regular fa-moon"></i>
+                </div>
             <div class="logo-section flex">
-                <h2 class="logo">Todo App</h2>
+                <h2 class="logo"><b>Todo App</b></h2>
                 <img src="./assets/icon.png" alt="logo" class="logo-icon">
             </div>
             <div class="input-section flex">
                 <input type="text" placeholder="enter your todo" class="input">
-                <button class="btn">Add</button>
+                <button class="btn" onclick="addTask()">Add</button>
             </div>
             <div class="todo-section">
-                <ul class="list-container flex">
-                    <h5 class="empty-text">
+                <h5 class="empty-text">
                         No List Items
-                    </h5>
-                    <li class="list flex">
+                </h5>
+                <ul class="list-container flex">
+                    <!-- <li class="list flex">
                         <img src="./assets/checkbox.png" alt="checked" class="checked">
                         <img src="./assets/unchecked.png" alt="unchecked" class="unchecked">
                         <h5 class="list-content">
                             this is my list nkjbfghbhie
                         </h5>
                         <span><i class="fa-solid fa-xmark cross"></i></span>
-                    </li>
+                    </li> -->
                 </ul>
             </div>
         </div>

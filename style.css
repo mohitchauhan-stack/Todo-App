@@ -22,20 +22,20 @@
 
     /* -- dark mode - Colors -- */
     /* -- bg - colors -- */
-    --bg-out: hsl(0, 0%, 0%);
-    --bg-dark: hsl(0, 0%, 8%);
-    --bg: hsl(0, 0%, 14%);
-    --bg-light: hsl(0, 0%, 20%);
-    --bg-xlight: hsl(0, 0%, 90%);
+    --bg-out: hsl(0, 0%, 10%);
+    --bg-dark: hsl(0, 0%, 15%);
+    --bg: hsl(0, 0%, 20%);
+    --bg-light: hsl(0, 0%, 25%);
+    --bg-xlight: hsl(0, 0%, 88%);
     /* -- text - colors -- */
-    --text: hsl(0, 0%, 95%);
-    --text-muted: hsl(0, 0%, 70%);
+    --text: hsl(0, 0%, 10%);
+    --text-muted: hsl(0, 0%, 50%);
     /* -- border - colors -- */
-    --border: hsl(0, 0%, 40%);
+    --border: hsl(0, 0%, 50%);
     /* -- gradient - colors -- */
     --gradient: linear-gradient(0deg, var(--bg), var(--bg-light));
     /* -- highlighted - colors -- */
-    --highlight: hsl(0, 0%, 60%);
+    --highlight: hsl(0, 0%, 90%);
     /* -- border - card -- */
     --border-card: 1px solid var(--border);
     /* -- shadow - color -- */
@@ -166,7 +166,7 @@ input{
     box-shadow: var(--brand-shadow);
     transition: all 0.2s ease-in-out;
     cursor: pointer;
-    color: var(--text);
+    color: var(--highlight);
 }
 
 .todo-app{
@@ -178,19 +178,36 @@ input{
     padding: var(--space-3xl);
     border-radius: var(--border-radius-3xl);
     background-color: var(--bg-dark);
-
+    position: relative;
 }
+.modes{
+    position: absolute;
+    right: 10px;
+    top: 50px;
+}
+.modes i {
+    font-size: var(--text-h6);
+    background-color: var(--bg);
+    color: var(--highlight);
+    /* height: 30px;
+    width: 30px; */
+    width: 50%;
+    border-radius: var(--space-2xl);
+    padding: var(--space-md);
+    text-align: center;
+    cursor: pointer;
+}
+
 
 .logo-section{
     gap: var(--space-lg);
 }
 .logo{
-    color: var(--text);
+    color: var(--highlight);
 }
 .logo-icon{
     width: 50px;
 }
-
 .input-section{
     width: 80%;
     gap: var(--space-3xl);
@@ -203,7 +220,7 @@ input{
 .todo-section{
     background-color: var(--bg-light);
     border: var(--border-card);
-    border-radius: var(--border-radius-3xl);
+    border-radius: var(--border-radius-2xl);
     height: 55vh;
     width: 100%;
     overflow: scroll;
@@ -217,7 +234,7 @@ input{
     padding: var(--space-2xl);
 }
 
-.list{
+li{
     background-color: var(--bg-xlight);
     color: var(--bg-dark);
     cursor: pointer;
@@ -226,49 +243,66 @@ input{
     word-wrap: break-word;
     border-radius: 20px;
     transition: all .1s ease-in-out;
-    width: 95%;
-    justify-content: space-between;
-    align-items: flex-start;
+    width: 100%;
     box-shadow: var(--shadow);
-    gap: var(--space-lg);
-}
-.list-content{
-    width: 90%;
-}
-
-.unchecked{
-    border-radius: 8px;
-    width: 23px;
-}
-.checked{
-    border-radius: 8px;
-    width: 23px;
-    display: none;
+    font-size: var(--text-h5);
+    user-select: none;
+    gap: var(--space-3xl);
+    position: relative;
+    box-shadow: var(--brand-shadow);
 }
 
-.list.done .checked{
-    display: block;
+li::before{
+    content: '';
+    position: absolute;
+    background-size: cover;
+    background-position: center;
+    border-radius: var(--border-radius-sm);
+    background-image: url(./assets/unchecked.png);
+    width: 23px;
+    height: 23px;
+    margin-right: 100px;
 }
-.list.done .unchecked{
-    display: none;
+li::after{
+    content: '';
+    position: absolute;
+    background-size: cover;
+    background-position: center;
+    border-radius: var(--border-radius-sm);
+    background-image: url(./assets/checked.png);
+    width: 23px;
+    height: 23px;
 }
-.list.done .list-content{
+
+li h5{
+    margin-inline: 40px;
+    color: var(--text);
+}
+
+li span{
+    position: absolute;
+    right: 18px;
+    top: 15px;
+    /* width: 23px;
+    height: 23px; */
+    padding: var(--space-xs) var(--space-md);
+    font-size: var(--text-h6);
+    border-radius: var(--border-radius-md);
+    background-color: var(--brand-primary);
+    color: var(--highlight);
+    text-align: center;
+}
+li span:hover{
+    background-color: var(--brand-secondary);
+
+}
+li.checked h5{
     text-decoration: line-through;
     color: var(--text-muted);
 }
 
-.list h4{
-    width: 60%;
-    /* text-align: center; */
-    color: var(--text);
-}
-.cross{
-    font-size: var(--text-h5);
-    background-color: var(--brand-secondary);
-    padding: var(--space-xs);
-    text-align: center;
-    border-radius: 10px;
-    color: var(--text);
+li.checked::before{
+    background-image: url(./assets/checkbox.png);
 }
 
 .empty-text{
@@ -276,6 +310,7 @@ input{
     text-align: center;
     display: none;
     transition: opacity 0.3s ease;
+    margin-top: var(--space-3xl);
 }
 
 

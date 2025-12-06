@@ -1,27 +1,81 @@
-
+// --- INITIALIZERS ---
 const listContainer = document.querySelector(".list-container");
-
-listContainer.addEventListener("click", function(e){
-    if (e.target.closest(".list")) {
-        const li = e.target.closest(".list");
-        li.classList.toggle("done");
-        // saveData();
-    } else if(e.target.tagName === "SPAN"){
-        e.target.parentElement.remove();
-        // updateEmptyState();
-        // saveData();
-    }
-}, false);
-
 const input = document.querySelector(".input");
 const btn = document.querySelector(".btn");
 
+// --- ADD TASK ---
+function addTask() {
+    if (input.value === '') {
+        alert("Input field empty!");
+    }
+    else {
+        let li = document.createElement("li");
+        li.innerHTML = `<h5>${input.value}</h5>`;
+        listContainer.appendChild(li);
+
+        let span = document.createElement("span");
+        span.innerHTML = "\u00d7";
+        li.appendChild(span);
+
+        input.value = "";
+        saveData();
+    }
+}
+
+// --- MARK DONE / DELETE ---
+listContainer.addEventListener("click", function(e){
+    if (e.target.tagName === "LI") {
+        e.target.classList.toggle("checked")
+        saveData();
+    } else if(e.target.tagName === "SPAN"){
+        e.target.parentElement.remove();
+        // updateEmptyState();
+        saveData();
+    }
+}, false);
+
+// --- SAVE TO LOCAL STORAGE ---
+function saveData() {
+    localStorage.setItem("data", listContainer.innerHTML);
+}
+
+// --- DISPLAY THE SAVED DATA ---
+function showData() {
+    listContainer.innerHTML = localStorage.getItem("data");
+}
+showData();
 
 
+// // ADD TASK
+// function addTask() {
+//     if( input.value === '' ){
+//         alert("field empty!");
+//     } else {
+//         let li = document.createElement("li");
+//         li.innerHTML = input.value;
+//         listContainer.appendChild(li);
+//         input.value = '';
+//         updateEmptyState();
 
+//         let span = document.createElement("span");
+//         span.innerHTML = "\u00d7";
+//         li.appendChild(span);
+//     }
+//     input.value = '';
+//     saveData();
+// }
 
-
-
+// // MARK DONE / DELETE TASK
+// listContainer.addEventListener("click", function(elem) {
+//     if(elem.target.tagName === "LI") {
+//         elem.target.classList.toggle("checked");
+//         saveData();
+//     } else if(elem.target.tagName === "SPAN"){
+//         elem.target.parentElement.remove();
+//         updateEmptyState();
+//         saveData();
+//     }
+// }, false)
 
 
 
