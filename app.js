@@ -2,6 +2,7 @@
 const listContainer = document.querySelector(".list-container");
 const input = document.querySelector(".input");
 const btn = document.querySelector(".btn");
+const emptyText = document.querySelector(".empty-text");
 
 // --- ADD TASK ---
 function addTask() {
@@ -19,6 +20,7 @@ function addTask() {
 
         input.value = "";
         saveData();
+        updateEmptyState();
     }
 }
 
@@ -31,6 +33,7 @@ listContainer.addEventListener("click", function(e){
         e.target.parentElement.remove();
         // updateEmptyState();
         saveData();
+        updateEmptyState();
     }
 }, false);
 
@@ -46,38 +49,15 @@ function showData() {
 showData();
 
 
-// // ADD TASK
-// function addTask() {
-//     if( input.value === '' ){
-//         alert("field empty!");
-//     } else {
-//         let li = document.createElement("li");
-//         li.innerHTML = input.value;
-//         listContainer.appendChild(li);
-//         input.value = '';
-//         updateEmptyState();
-
-//         let span = document.createElement("span");
-//         span.innerHTML = "\u00d7";
-//         li.appendChild(span);
-//     }
-//     input.value = '';
-//     saveData();
-// }
-
-// // MARK DONE / DELETE TASK
-// listContainer.addEventListener("click", function(elem) {
-//     if(elem.target.tagName === "LI") {
-//         elem.target.classList.toggle("checked");
-//         saveData();
-//     } else if(elem.target.tagName === "SPAN"){
-//         elem.target.parentElement.remove();
-//         updateEmptyState();
-//         saveData();
-//     }
-// }, false)
-
-
+// --- EMPTY TEXT FUNCTION ---
+function updateEmptyState() {
+    if (listContainer.children.length === 0) {
+        emptyText.classList.remove("hidden");
+    } else {
+        emptyText.classList.add("hidden");
+    }
+}
+updateEmptyState();
 
 
 
